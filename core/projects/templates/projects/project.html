@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% block mainImage %}
+<div class="container-fluid page-container m-0">
+<div class="row align-items-center">
+	<div class="col-6 p-0">
+	<img class="page-image" src="{{project.image.url}}">		
+	</div>
+	<div class="col-6 text-center m-0 p-5">
+		<h3 class="fw-bold">{{project.title}}</h3>
+		<h5 class="mt-3">{{project.summary}}</h5>
+	</div>
+</div>
+</div>
+{% endblock %}
+<div class="container mt-5">
+	<div class="row p-5">
+		<div class="col-12 p-5">
+			{{project.content|safe}}
+		</div>
+		<div class="col-8 mt-5">
+			<h5 class="font-gold">Период проекта {{project.period}}</h5>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,278 @@
+@font-face{
+	font-family: MontserratL;
+	src: url(fonts/montserrat2/Montserrat-Light.ttf);
+}
+@font-face{
+	font-family: Jura;
+	src: url(fonts/Jura-Light.ttf);
+}
+@font-face{
+	font-family: PoiretOne;
+	src: url(fonts/PoiretOne-Regular.ttf);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px); /* Начальное смещение снизу */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Плавное появление и движение */
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0); /* Элемент возвращается в исходное положение */
+}
+
+/*.fade-in {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  transform: translateY(20px);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}*/
+
+a{
+/*	color: #E3AC22;*/
+	color: #DAA520;
+}
+
+body {
+	color: white;
+	background-color: #252A2E;
+	font-family: PoiretOne;
+	font-size: 20px;
+
+}
+
+.fs-7{
+	font-size: 14px;
+}
+
+.fs-8{
+	font-size: 12px;
+}
+
+.text-gray{
+	color: rgba(235, 235, 235, .9);
+}
+
+.font-gold{
+	color: #DAA520;
+}
+
+#navbar{    
+	transition: background-color 0.3s ease, color 0.3s ease; ;
+}
+
+.navbar:after{
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 10%;
+  width: 80%;
+  border-bottom: 1px solid rgba(125, 125, 135, 1.0);
+
+}
+
+.parallax {
+  background-image: url("../img/bg5.jpg");
+  display: block;
+  margin-top: -100px;
+	filter: brightness(65%);
+	width: 100%;
+  min-height: 800px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-container{
+	position:relative;
+}
+
+.parallax-text{
+	color: white;
+	position: absolute;
+	text-shadow: 1px 1px 6px black;
+	bottom: 30%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+  animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+  from { 
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.parallax-title {
+	font-family: Jura;
+}
+
+.services .col-6{
+	font-size: 17px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+  min-height: 50px;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, rgba(105, 105, 115, 1.0) 95%, transparent 50%) 100% 1;
+}
+
+.services i{
+	color: #DAA520;
+	font-size: 12px;
+}
+
+.about-block{
+	background-color: #343a40;
+	position: relative;
+	padding: 150px 150px;
+	margin: 125px 0 125px 0;
+}
+
+.about-block p {
+/*	font-family: Jura;*/
+		font-size: 20px;
+}
+
+.prj-link {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.prj-card {
+	background-color: transparent;
+	color: white;
+	font-family: PoiretOne;
+  border: 0px;
+  border-radius: 0px;
+}
+.card-img-top{
+	transition: transform .25s ease-in-out; /* Animation */
+}
+
+.card-img-top:hover {
+	-ms-transform: scale(1.03); /* IE 9 */
+	-webkit-transform: scale(1.03); /* Safari 3-8 */
+	transform: scale(1.03);
+}
+
+.prj-card .card-title {
+	font-family: PoiretOne;
+}
+
+.card-img-top{
+	display: block;
+	object-fit: cover;
+	max-width: 100%;
+	height: 225px;
+}
+
+.prj-time{
+	font-size: 13px;
+	color: #DAA520;
+	transition: color .25s ease-in-out; /* Animation */
+}
+.triangle-1la{ 
+  border-right: 275px solid transparent;
+	border-top: 250px solid #393F44;
+	top: 0px;
+  left: 0;
+  position: absolute;
+}
+
+.triangle-2la{ 
+  border-left: 131px solid transparent; 
+  border-bottom: 131px solid #40464B; 
+	top: 0px;
+  left: 0;
+  position: absolute;
+}
+
+.triangle-1ra{ 
+	transform: scale(-1,1);
+  border-right: 275px solid transparent;
+	border-bottom: 250px solid #393F44; 
+	bottom: 0px;
+  right: 0;
+  position: absolute;
+}
+
+.triangle-2ra{ 
+	transform: scale(-1,1);
+  border-left: 131px solid transparent; 
+  border-top: 131px solid #40464B; 
+	bottom: 0px;
+  right: 0;
+  position: absolute;
+}
+
+.contacts{
+	position: relative;
+}
+.contacts-img{
+	position: relative;
+	z-index: 1;
+}
+.contacts:before{
+    content: '';
+    position: absolute;
+    top: -27%;
+    bottom: -13%;
+    left: 35%;
+    right: 13%;
+    background-color: #DAA520;
+}
+
+.custom-footer{
+	bottom: 0;
+	color: white;
+	background-color:#343a40;
+	position: relative;
+	min-height: 40vh;
+}
+
+.triangle-1lf{ 
+  border-right: 275px solid transparent;
+	border-bottom: 250px solid #393F44; 
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+}
+
+.triangle-2lf{ 
+	border-left: 131px solid transparent; 
+  border-top: 131px solid #40464B; 
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+}
+
+.triangle-1rf{ 
+	transform: scale(-1,1);
+  border-right: 275px solid transparent;
+	border-bottom: 250px solid #393F44; 
+	bottom: 0px;
+  right: 0;
+  position: absolute;
+}
+
+.triangle-2rf{ 
+	transform: scale(-1,1);
+  border-left: 131px solid transparent; 
+  border-top: 131px solid #40464B; 
+	bottom: 0px;
+  right: 0;
+  position: absolute;
+}
+
+
+

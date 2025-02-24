@@ -1,0 +1,225 @@
+{% load static %}
+<!-- Headlock · Imogen Heap -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GIS PRO</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap_5.3.3/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'custom/styles.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	<script type="text/javascript" src="{% static 'bootstrap_5.3.3/js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'custom/scripts.js' %}"></script>
+	<!-- <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script> -->
+	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>	
+</head>
+<body>
+	{% block navbar %}
+	<nav class="navbar navbar-expand-lg p-2 sticky-top" data-bs-theme="dark" id="navbar">
+		<div class="container ps-5 pe-5 ">
+			<a class="navbar-brand ps-3" href="{% url 'main_page:main' %}">
+				<img src="{% static 'img/logo2.png' %}" alt="Logo" width="32" height="25" class="d-inline-block align-text-top">
+				GIS pro
+			</a>
+			<ul class="navbar-nav justify-content-end">
+				<li class="nav-item p-2">
+					<a class="nav-link active" aria-current="page" href="#">Новости</a>
+				</li>
+				<li class="nav-item p-2">
+					<a class="nav-link active" aria-current="page" href="#">Услуги</a>
+				</li>
+				<li class="nav-item p-2">
+					<a class="nav-link active" aria-current="page" href="#">О нас</a>
+				</li>
+				<li class="nav-item p-2">
+					<a class="nav-link active" aria-current="page" href="#">Проекты</a>
+				</li>
+				<li class="nav-item p-2">
+					<a class="nav-link active" href="#">Достижения</a>
+				</li>
+				<li class="nav-item p-2">
+					<a class="nav-link active" href="{% url 'users:all_users' %}" aria-current="page" href="#">Мониторинг</a>
+				</li>
+				<li class="nav-item p-2">
+					<a class="nav-link active" href="#">Реквизиты</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+	<script type="text/javascript">
+		window.addEventListener('scroll', function() {
+			const myDiv = document.getElementById('navbar');
+
+if (window.scrollY > 100) {  // Меняет цвет, когда страница прокручена на 100 пикселей или больше
+	myDiv.style.backgroundColor = '#343a40';
+	myDiv.setAttribute('data-bs-theme', 'dark');
+	myDiv.style.borderBottom = '1px solid rgba(125, 125, 135, 1.0)';
+} else {
+	myDiv.style.backgroundColor = 'transparent';
+	myDiv.setAttribute('data-bs-theme', 'dark')
+	myDiv.style.borderBottom = '0';
+}
+});
+</script>
+{% endblock %}
+{% block content %}
+{% block mainImage %}
+<div class="parallax-container">
+	<div class="parallax">
+	</div>
+	<div class="parallax-text text-center fade-in">
+		<h2 class="parallax-title ">Землеустройство и архитектурно-конструкторское проектирование</h2>
+		<h4 class="">Все объекты имеют своё местоположение. Однако понимание того, почему они находятся там, где они есть, - это совсем другая история.</h4>
+		<!-- <h4>Все объекты имеют своё местоположение. Однако понимание причи	н, по которым они находятся именно там, где находятся, представляет собой отдельную задачу.</h4> -->
+	</div>
+</div>
+<!-- <img src="{% static 'img/2.jpeg' %}" class="d-block w-100" alt="..."> -->
+{% endblock %}
+{% block news %}
+
+{% endblock %}
+
+<div class="container p-5 fade-up">
+	<div class="row p-3 mt-5 services">
+		{% block services %}
+
+		{% endblock %}
+	</div>
+</div>
+{% block aboutus %}
+<div class="about-block ">
+	<div class="triangle-1la"></div>  	
+	<div class="triangle-2la"></div>
+	<h3 class="text-center fw-bold mb-5 fade-up">О нас</h3>
+	<div class="fade-up">
+		<p class="my-4">
+			Гибкость, позволяющая привлекать нужных людей для разработки уникальных строительных решений; неизменная нацеленность на повышение рентабельности вашего проекта; а также способность использовать инновации для решения возникающих задач и оставаться на переднем крае. Это GIS PRO.
+		</p>
+		<p class="fw-bold">
+			Опираясь на нашу культуру собственности
+		</p>
+		<p class="my-4">
+			Как компания, которая на 100% принадлежит сотрудникам, мы сотрудничаем и внедряем инновации, чтобы помочь нашим партнерам процветать. Наша культура собственности способствует вашему успеху. 
+		</p>
+		<p class="my-4">
+			Независимо от того, работаете ли вы на рынке гражданских, промышленных или специальных проектов, партнерство с GIS означает, что вы получаете проверенного, надежного партнера с полным спектром услуг и мобильной сетью из экспертов и профессионалов. 
+		</p>
+	</div>
+	<div class="triangle-1ra"></div>  	
+	<div class="triangle-2ra"></div>
+</div>
+{% endblock %}
+{% block projects %}
+
+{% endblock %}
+<div class="about-block text-center">
+	<div class="triangle-1la"></div>  	
+	<div class="triangle-2la"></div>
+	<h3 class="my-3 fade-up">Наши достижения</h3>
+	<h5 class="my-4 fw-bold fade-up">Это результат многолетнего опыта и упорной работы.</h5>
+	<div class="col-12 p-5 fade-up">
+		<p>Мы гордимся тем, что за годы своей деятельности стали надежным партнером для множества компаний, предоставляя инновационные решения и гарантируя высокое качество на каждом этапе.Мы стремимся к совершенству, постоянно совершенствуя свои процессы и расширяя возможности для клиентов.</p>
+	</div>
+	<div class="row fade-up">
+		<div class="col-4">
+			<h1 class="font-gold"><i class="bi bi-clock-history"></i></h1>
+			<h1>11</h1> 
+			Лет на рынке
+		</div>
+		<div class="col-4">
+			<h1 class="font-gold"><i class="bi bi-briefcase"></i></h1>
+			<h1>100</h1>
+			Успешных проектов в разных отраслях
+		</div>
+		<div class="col-4">
+			<h1 class="font-gold"><i class="bi bi-person-circle"></i></h1>
+			<h1>1200</h1>
+		Довольных клиентов  по всей республике</div>
+	</div>
+	<div class="triangle-1ra"></div>  	
+	<div class="triangle-2ra"></div>
+</div>
+
+{% block partners %}
+
+{% endblock %}
+<div class="container p-5">
+
+
+	<div class="row fade-up p-3 mt-5">
+		<h4 class="fw-bold ">Реквизиты</h4>
+
+		<p class="fs-5">Хотите поговорить лично? Позвоните или посетите нас</p>
+		<h4></h4>
+		<div class="col-3">
+			<p class="mb-2 fw-bold font-gold">Адрес:</p>
+			<p class="mb-1">г.Бишкек, ул.Токтоналиева 4Б</p>
+			<p>с Пн-Пт 09:00-18:00</p>
+			<p class="mb-2 mt-5 pt-3 fw-bold font-gold">Email:</p>
+			<p>admin@domain.com</p>
+		</div>
+
+		<div class="col-4">
+			<p class="mb-2 fw-bold font-gold">Телефон:</p>
+			<p class="mb-1">+996 700 600 645</p>
+			<p class="mb-1">+996 700 600 645</p>
+			<p class="mb-1">+996 700 600 645</p>
+		</div>
+		<div class="col-5 align-self-end ">
+			<div class="contacts">
+				<!-- <img src="{% static 'img/ct6.jpg' %}" class="img-fluid contacts-img"> -->
+				<div id="map"></div>
+				<script type="text/javascript">
+					var map;
+
+					DG.then(function () {
+						map = DG.map('map', {
+							center: [42.85179, 74.59328],
+							zoom: 25,
+						});
+
+						DG.marker([42.85189, 74.59365]).addTo(map).bindPopup('Наш офис!');
+					});
+				</script>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+<footer class="custom-footer p-5">
+	<div class="container pt-3 px-5">
+		<div class="row px-3">
+			<div class="col-10">
+				<a class="navbar-brand" href="#">
+					<img src="{% static 'img/logo2.png' %}" alt="Logo" width="32" height="25" class="d-inline-block align-text-top">
+					GIS pro
+				</a>
+				<p class="fs-7 text-secondary mt-4"> 2025-2025 &copy; GIS PRO Все права защищены.</p>
+			</div>
+
+			<div class="col-2">
+				<p class="mt-1">Наши соцсети</p>
+				<a href=""><i class="bi bi-instagram fs-5 me-2"></i></a>
+				<a href=""><i class="bi bi-facebook fs-5"></i></a>
+				<p class="fs-7 mt-4"><a href="#">Вернуться к началу</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="triangle-1lf"></div>  	
+	<div class="triangle-2lf"></div>
+	<div class="triangle-1rf"></div>  	
+	<div class="triangle-2rf"></div>
+</footer>{% endblock %}
+</body>
+</html>

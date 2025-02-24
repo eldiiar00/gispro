@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+{% block news %}
+
+<div class="container px-5 my-5">
+	<div class="row px-3">
+		<h4 class="text-center fw-bold mt-5">Все новости</h4>
+		<h5 class="mt-4 mb-5 text-center">
+			Ознакомьтесь с нашим новостным разделом узнайте, что происходит в мире GIS.
+		</h5>
+		{% for news in all_news %}
+		<div class="col-sm-6 col-md-4 col-12 d-flex align-items-stretch p-3">	
+			<div class="mt-3 news-card ">
+				<a href="{% url 'news:one_news' news.id %}" class="news-link">
+					<img src="{{ news.image.url }}" class="card-img-top rounded-0" alt="...">
+					<div class="news-body">
+						<p class="news-title">{{ news.title }}</p>
+						<p class="news-text">{{ news.summary|slice:":90" }}...</p>
+					</div>
+					<div class="p-3 news-time">
+						{{ news.created_at }}
+					</div>
+				</a>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
+{% endblock %}
